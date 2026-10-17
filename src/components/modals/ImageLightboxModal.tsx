@@ -48,6 +48,14 @@ export const ImageLightboxModal: React.FC<ImageLightboxModalProps> = ({
             src={imageUrl}
             alt={title || 'Project UI'}
             referrerPolicy="no-referrer"
+            onError={(e) => {
+              const target = e.currentTarget;
+              if (!target.dataset.triedFallback) {
+                target.dataset.triedFallback = 'true';
+                const filename = imageUrl.split('/').pop();
+                target.src = `/images/${filename}`;
+              }
+            }}
             className="w-full max-h-[75vh] object-contain rounded-lg"
           />
         </div>

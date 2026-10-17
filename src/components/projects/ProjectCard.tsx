@@ -263,6 +263,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   src={project.imageUrl}
                   alt={`${project.title} screenshot`}
                   referrerPolicy="no-referrer"
+                  loading="eager"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.dataset.triedFallback) {
+                      target.dataset.triedFallback = 'true';
+                      target.src = `/images/${project.id}.jpg`;
+                    }
+                  }}
                   className="w-full h-full object-cover object-top transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-transparent to-transparent pointer-events-none opacity-90" />

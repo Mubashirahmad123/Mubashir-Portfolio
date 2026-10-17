@@ -1,4 +1,9 @@
 import { Project, ExperienceItem, FreelanceService } from '../types';
+import remoteJobImg from '../assets/images/remote_job_agent_ui_1792235323300.jpg';
+import fastbeetleImg from '../assets/images/fastbeetle_logistics_ui_1792235324249.jpg';
+import orderSnapImg from '../assets/images/ordersnap_ecommerce_ui_1792235323781.jpg';
+import musicCtrlImg from '../assets/images/music_controller_ui_1792235322914.jpg';
+import crmSystemImg from '../assets/images/crm_system_ui_1792248346968.jpg';
 
 export const PERSONAL_INFO = {
   name: 'Mubashir Nazir',
@@ -59,7 +64,7 @@ export const PROJECTS: Project[] = [
     category: 'ai',
     categoryLabel: 'AI & Automation',
     description: 'An automated multi-source system scraping 45+ remote job portals using APIs, Playwright stealth, and Crawl4AI. Automatically matches postings against candidate CVs using FAISS semantic embeddings, executes a 5-tier LLM fallback cascade (Gemini 2.5 Flash → Groq → Mistral), and generates ATS-optimized 1-page resumes and tailored cover letters with bi-directional Google Sheets sync. Verified by 1,042 pytest and 68 E2E tests.',
-    imageUrl: '/src/assets/images/remote_job_agent_ui_1792235323300.jpg',
+    imageUrl: remoteJobImg,
     metrics: [
       { label: 'Job Sources', value: '45+ Boards' },
       { label: 'LLM Fallback', value: '5-Tier Cascade' },
@@ -161,7 +166,7 @@ export const PROJECTS: Project[] = [
     category: 'backend',
     categoryLabel: 'Backend & Systems',
     description: 'Core backend microservices for rider, merchant, and customer operations. Integrated the PhonePe payment gateway with secure HMAC-SHA256 webhooks, engineered private customer-rider communication masking and delivery alerts, slashed page load times by 70% across 5 operational dashboards, and built the automated Bulk PinZone assignment engine cutting manual ops by 90%.',
-    imageUrl: '/src/assets/images/fastbeetle_logistics_ui_1792235324249.jpg',
+    imageUrl: fastbeetleImg,
     metrics: [
       { label: 'Page Load Time', value: '-70%' },
       { label: 'Manual Ops Saved', value: '90%' },
@@ -257,7 +262,7 @@ async function bulkAssignPinZones(hubId, zoneAssignments, operatorId) {
     category: 'fullstack',
     categoryLabel: 'Full Stack',
     description: 'Designed and deployed the end-to-end dropshipping portal OrderSnap.in. Built utilizing Node.js, Express, React, Redux Toolkit, and PostgreSQL with Sequelize, featuring secure JWT + Passport.js role-based authentication, real-time inventory synchronization, and automated order fulfillment.',
-    imageUrl: '/src/assets/images/ordersnap_ecommerce_ui_1792235323781.jpg',
+    imageUrl: orderSnapImg,
     metrics: [
       { label: 'Architecture', value: 'Full-Stack SPA' },
       { label: 'Security', value: 'JWT + Passport.js' },
@@ -327,7 +332,7 @@ module.exports = { requireAuth, requireRole };`
     category: 'fullstack',
     categoryLabel: 'Full Stack',
     description: 'Collaborative group music streaming session app integrating the Spotify Web API. Enabled democratic real-time playlist voting, automatic skip thresholds, and live playback synchronization across connected room guests.',
-    imageUrl: '/src/assets/images/music_controller_ui_1792235322914.jpg',
+    imageUrl: musicCtrlImg,
     metrics: [
       { label: 'Integration', value: 'Spotify Web API' },
       { label: 'Voting Logic', value: 'Democratic Threshold' },
@@ -366,6 +371,7 @@ module.exports = { requireAuth, requireRole };`
     category: 'backend',
     categoryLabel: 'Backend & Systems',
     description: 'Comprehensive customer relationship management system featuring dynamic pipeline reporting, lead stage transitions, activity tracking, and analytics to support executive decision-making.',
+    imageUrl: crmSystemImg,
     metrics: [
       { label: 'Database', value: 'MySQL' },
       { label: 'Backend', value: 'Django ORM' },
